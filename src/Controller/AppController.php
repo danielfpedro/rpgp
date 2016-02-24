@@ -61,9 +61,11 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
+        $authUser = [];
         if ($this->Auth->user()) {
-            $this->set('authUser', $this->Auth->user());
+            $authUser = $this->Auth->user();
         }
+        $this->set(compact('authUser'));
     }
 
     /**

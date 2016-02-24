@@ -28,7 +28,7 @@
             
             <div>
                 <form method="GET" action="<?= $this->Url->build(['controller' => 'Plugins', 'action' => 'search']) ?>">
-                    <input type="text" class="form-control" value="<?= $this->request->query('q') ?>" name="q">
+                    <input type="text" class="form-control" value="<?= $this->request->query('q') ?>" name="q" autocomplete="off">
                     <button type="submit">Pesquisar</button>
                 </form>
             </div>

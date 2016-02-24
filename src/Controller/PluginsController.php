@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Plugins Controller
@@ -10,7 +11,11 @@ use App\Controller\AppController;
  */
 class PluginsController extends AppController
 {
-
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['search', 'view']);
+    }
     /**
      * Index method
      *
@@ -117,7 +122,10 @@ class PluginsController extends AppController
         $plugins = $this->Plugins->find('all', [
             'contain' => 'Users',
             'conditions' => [
-                'tags LIKE' => '%'.$q.'%'
+                'or' => [
+                    'Plugins.name LIKE' => '%'.$q.'%',
+                    'Plugins.tags LIKE' => '%'.$q.'%'
+                ]
             ]
         ]);
 

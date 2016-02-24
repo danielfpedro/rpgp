@@ -8,6 +8,9 @@
                     echo $this->Form->button('Criar conta');
                 echo $this->Form->end();
             ?>
+            <div>
+                AInda não tem uma conta? <?= $this->Html->link('Crie aqui.', ['controller' => 'Users', 'action' => 'add']) ?>
+            </div>
         </div>
     </div>
 </div>

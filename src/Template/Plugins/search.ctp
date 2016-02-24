@@ -8,7 +8,7 @@
             <?php foreach ($plugins as $plugin): ?>
                 <div>
                     <h4>
-                        <?= $this->Html->link($plugin->name, ['controller' => 'Plugins', 'action' => 'view', $plugin->slug]) ?>
+                        <?= $this->Html->link($plugin->name, ['controller' => 'Plugins', 'action' => 'view', $plugin->namespace]) ?>
                     </h4>
                     <?= $this->Html->link($plugin->user->name, ['controller' => 'Users', 'action' => 'view', $plugin->user->username]) ?>
                     <p class="muted"><?= $plugin->description ?></p>

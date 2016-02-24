@@ -12,11 +12,10 @@ use Cake\Event\Event;
  */
 class UsersController extends AppController
 {
-
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add']);
+        $this->Auth->allow(['add', 'view']);
     }
 
     /**
@@ -73,8 +72,10 @@ class UsersController extends AppController
      * @return void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function profileSettings()
     {
+        $id = $this->Auth->user('id');
+
         $user = $this->Users->get($id, [
             'contain' => []
         ]);

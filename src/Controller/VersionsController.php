@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Versions Controller
@@ -10,7 +11,11 @@ use App\Controller\AppController;
  */
 class VersionsController extends AppController
 {
-
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['index']);
+    }
     /**
      * Index method
      *
@@ -64,7 +69,7 @@ class VersionsController extends AppController
 
                 $plugin = $this->Versions->Plugins->get($id);
 
-                return $this->redirect(['controller' => 'Plugins', 'action' => 'view', $plugin->slug]);
+                return $this->redirect(['controller' => 'Plugins', 'action' => 'view', $plugin->namespace]);
             } else {
                 $this->Flash->error(__('The version could not be saved. Please, try again.'));
             }

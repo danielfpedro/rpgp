@@ -7,6 +7,7 @@
                     echo $this->Form->input('username');
                     echo $this->Form->input('name');
                     echo $this->Form->input('password');
+                    echo $this->Form->input('password_confirm', ['type' => 'password']);
                     echo $this->Form->button('Criar conta');
                 echo $this->Form->end();
             ?>

@@ -1,16 +1,16 @@
 
 <div class="navbar navbar-default">
 	<div class="container">
-		<div class="navbar-right">
-			<?= $this->Html->link('Adicionar Plugin', [
-				'controller' => 'Plugins',
-				'action' => 'add'
-			], [
-				'class' => 'btn btn-primary navbar-btn'
-			]) ?>
-		</div>
-		<div class="navbar-right">
-			<?php if ($authUser): ?>
+		<?php if ($authUser): ?>
+			<div class="navbar-right">
+				<?= $this->Html->link('Adicionar Plugin', [
+					'controller' => 'Plugins',
+					'action' => 'add'
+				], [
+					'class' => 'btn btn-primary navbar-btn'
+				]) ?>
+			</div>
+			<div class="navbar-right">
 				<div class="dropdown">
 					<button
 						class="btn btn-default dropdown-toggle"
@@ -22,9 +22,9 @@
 					</button>
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li>
-							<?= $this->Html->link('Meus Plugins', [
-								'controller' => 'Plugins',
-								'action' => 'add'
+							<?= $this->Html->link('Configurações de perfil e conta', [
+								'controller' => 'Users',
+								'action' => 'profileSettings'
 							]) ?>
 						</li>
 						<li>
@@ -40,7 +40,22 @@
 						</li>
 					</ul>
 				</div>
-			<?php endif ?>
-		</div>
+			</div>
+		<?php else: ?>
+			<div class="navbar-right">
+				<?= $this->Html->link('Sign up', [
+					'controller' => 'Users',
+					'action' => 'add'
+				], [
+					'class' => 'btn btn-primary navbar-btn'
+				]) ?>
+				<?= $this->Html->link('Sign in', [
+					'controller' => 'Users',
+					'action' => 'login'
+				], [
+					'class' => 'btn btn-default navbar-btn'
+				]) ?>
+			</div>
+		<?php endif ?>
 	</div>
 </div>
