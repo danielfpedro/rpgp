@@ -49,6 +49,8 @@ Router::scope('/', function ($routes) {
      */
     $routes->connect('/', ['controller' => 'Site', 'action' => 'home']);
 
+    $routes->extensions(['json']);
+
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */

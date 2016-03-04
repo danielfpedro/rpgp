@@ -33,13 +33,23 @@ class PluginsController extends AppController
     public function view($namespace = null)
     {
         $plugin = $this->Plugins->find('all', [
-            'contain' => 'Users',
+            'contain' => ['Users', 'PluginsPhotos'],
             'conditions' => ['namespace' => $namespace]
         ])->first();
 
         $lastestVersion = $this->Plugins->getLatestVersion($plugin);
 
         $this->set(compact('plugin', 'lastestVersion'));
+    }
+
+    public function photosSettings($namespace = null)
+    {
+        $plugin = $this->Plugins->find('all', [
+            'contain' => ['Users', 'PluginsPhotos'],
+            'conditions' => ['namespace' => $namespace]
+        ])->first();
+
+        $this->set(compact('plugin'));
     }
 
     /**

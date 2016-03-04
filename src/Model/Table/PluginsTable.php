@@ -34,7 +34,9 @@ class PluginsTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('Users');
+        
         $this->hasMany('Versions');
+        $this->hasMany('PluginsPhotos');
 
         $this->belongsToMany('Categories', [
             'foreignKey' => 'plugin_id',
