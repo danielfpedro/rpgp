@@ -37,6 +37,7 @@ class PluginsTable extends Table
         
         $this->hasMany('Versions');
         $this->hasMany('PluginsPhotos');
+        $this->belongsTo('RpgmakerVersions');
 
         $this->belongsToMany('Categories', [
             'foreignKey' => 'plugin_id',

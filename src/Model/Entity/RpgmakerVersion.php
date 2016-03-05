@@ -4,20 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Plugin Entity.
+ * RpgmakerVersion Entity.
  *
  * @property int $id
  * @property string $name
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
- * @property int $author_id
- * @property \App\Model\Entity\Author $author
- * @property string $description
- * @property string $namespace
- * @property \App\Model\Entity\Version[] $versions
- * @property \App\Model\Entity\Category[] $categories
+ * @property \App\Model\Entity\Plugin[] $plugins
  */
-class Plugin extends Entity
+class RpgmakerVersion extends Entity
 {
 
     /**
@@ -33,9 +28,4 @@ class Plugin extends Entity
         '*' => true,
         'id' => false,
     ];
-
-    protected function _getTagsArray()
-    {
-        return explode(',', $this->_properties['tags']);
-    }
 }

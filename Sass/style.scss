@@ -1,0 +1,33 @@
+$main-color: #355AEA;
+$border-color: lighten(#000, 88%);
+
+body {
+	ffont-family: 'Lato', sans-serif!important;
+}
+a {
+	color: $main-color!important;
+}
+.container-search{
+	background-color: $main-color;
+	padding: 20px;
+}
+
+.plugin-card h3{
+	font-size: 24px;
+}
+.plugin-card h3 > span{
+	font-size: 14px;
+}
+
+ul.sidemenu{
+	border-left: 1px solid $border-color;
+	padding-left: 15px;
+}
+ul.sidemenu > li {
+	margin-bottom: 15px;
+	font-size: 14px;
+	list-style: none;
+}
+ul.sidemenu > li > a {
+	color: #000;
+}

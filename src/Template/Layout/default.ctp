@@ -8,7 +8,10 @@
     </title>
     <?= $this->Html->meta('icon') ?>
 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+
     <?= $this->Html->css('../lib/bootstrap/dist/css/bootstrap.min.css') ?>
+    <?= $this->Html->css('style.min.css') ?>
 
     <?= $this->Html->script('../lib/jquery/dist/jquery.min.js') ?>
     <?= $this->Html->script('../lib/bootstrap/dist/js/bootstrap.min.js') ?>
@@ -22,23 +25,20 @@
 
     <?= $this->element('navbar') ?>;
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-            
-            <div>
-                <form method="GET" action="<?= $this->Url->build(['controller' => 'Plugins', 'action' => 'search']) ?>">
-                    <input type="text" class="form-control" value="<?= $this->request->query('q') ?>" name="q" autocomplete="off">
-                    <button type="submit">Pesquisar</button>
-                </form>
-            </div>
-
-                <?= $this->fetch('content') ?>
-            </div>
-            <div class="col-md-4">
-                
+    <div class="container-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <form method="GET" action="<?= $this->Url->build(['controller' => 'Plugins', 'action' => 'search']) ?>">
+                        <input type="text" class="form-control form-control-lg" value="<?= $this->request->query('q') ?>" name="q" autocomplete="off" placeholder="Search plugins...">
+                    </form>      
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="container">
+        <?= $this->fetch('content') ?>
     </div>
 </body>
 </html>

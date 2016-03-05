@@ -76,7 +76,8 @@ class PluginsController extends AppController
         }
 
         $categories = $this->Plugins->Categories->find('list', ['limit' => 200]);
-        $this->set(compact('plugin', 'categories'));
+        $rpgmakerVersions = $this->Plugins->RpgmakerVersions->find('list', ['limit' => 200]);
+        $this->set(compact('plugin', 'categories', 'rpgmakerVersions'));
     }
 
     /**
@@ -103,7 +104,8 @@ class PluginsController extends AppController
             }
         }
         $categories = $this->Plugins->Categories->find('list', ['limit' => 200]);
-        $this->set(compact('plugin', 'categories'));
+        $rpgmakerVersions = $this->Plugins->RpgmakerVersions->find('list', ['limit' => 200]);
+        $this->set(compact('plugin', 'categories', 'rpgmakerVersions'));
     }
 
     /**
