@@ -23,19 +23,29 @@
 <body>
     <?= $this->Flash->render() ?>
 
-    <?= $this->element('navbar') ?>;
+    <?= $this->element('navbar') ?>
 
-    <div class="container-search">
+    <div class="home-hero">
+        <div class="home-hero-container">
+            <h1>
+                Go Further
+            </h1>
+            <p>Enchant your RPG Maker game with the hotest plugins that is out there.</p>
+        </div>
+    </div>
+
+<!--     <div class="container-search">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-8">
                     <form method="GET" action="<?= $this->Url->build(['controller' => 'Plugins', 'action' => 'search']) ?>">
-                        <input type="text" class="form-control form-control-lg" value="<?= $this->request->query('q') ?>" name="q" autocomplete="off" placeholder="Search plugins...">
+                        <input type="text" class="form-control" value="<?= $this->request->query('q') ?>" name="q" autocomplete="off" placeholder="Search plugins...">
                     </form>      
+                     <p class="container-search-text">Castle of plugins is a RPG Maker package control.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <?= $this->fetch('content') ?>

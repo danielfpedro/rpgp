@@ -1,16 +1,16 @@
-
-<div class="navbar navbar-default">
+<div class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
+		<p class="navbar-text" style="color: #FFF;">Plugins Castle</p>
 		<?php if ($authUser): ?>
-			<div class="navbar-right">
+<!-- 			<div class="navbar-right">
 				<?= $this->Html->link('Adicionar Plugin', [
 					'controller' => 'Plugins',
 					'action' => 'add'
 				], [
-					'class' => 'btn btn-primary navbar-btn'
+					'class' => 'btn btn-default navbar-btn'
 				]) ?>
-			</div>
-			<div class="navbar-right">
+			</div> -->
+			<!-- <div class="navbar-right">
 				<div class="dropdown">
 					<button
 						class="btn btn-default dropdown-toggle"
@@ -40,9 +40,9 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 		<?php else: ?>
-			<div class="navbar-right">
+			<!-- <div class="navbar-right">
 				<?= $this->Html->link('Sign up', [
 					'controller' => 'Users',
 					'action' => 'add'
@@ -55,7 +55,7 @@
 				], [
 					'class' => 'btn btn-default navbar-btn'
 				]) ?>
-			</div>
+			</div> -->
 		<?php endif ?>
 	</div>
 </div>
