@@ -14,27 +14,53 @@ hr {
 	border-color: $divider-color;
 }
 
+a.navbar-brand, a.dropdown-profile{
+	color: #FFF!important;
+}
+
+.container-page{
+	margin-top: 60px;
+}
+.btn-default{
+	color: $primary-text-color!important;
+	padding-right: 20px;
+	padding-left: 20px;
+	font-weight: bold;
+	border: 0;
+}
+.btn-primary{
+	background-color: $primary-color!important;
+	color: #FFF!important;
+	padding-right: 20px;
+	padding-left: 20px;
+	font-weight: bold;
+	border: 0;
+}
+.btn-primary:hover{
+	background-color: $primary-color-dark!important;
+}
+
 .home-hero{
 	text-align: center;
 	/*border: 1px solid red;*/
 	/*margin-top: 40px;*/
-	padding: 45px;
 	margin-bottom: 30px;
 	background-image: url(../img/home_hero_bg.jpg);
 	background-size: cover;
 	background-position: center center;
-	padding-top: 80px!important;
+	padding-top: 60px!important;
+	padding-bottom: 20px;
 }
 .home-hero-container{
-	padding: 0 400px;
+	/*padding: 0 400px;*/
 }
 .home-hero h1{
-	font-size: 50px;
+	font-size: 40px;
 }
-.home-hero p{
+.home-hero small{
 	font-size: 20px;
 }
-.home-hero h1, .home-hero p{
+.home-hero h1, .home-hero small{
 	color: #FFF;
 	text-shadow: 1px 1px rgba(#000, .1);
 }
@@ -86,6 +112,9 @@ $font-size: 22px;
 	font-size: 10px;
 }
 ul.sidemenu{
+	margin-left: -15px!important;
+	padding-left: 0!important;
+	margin-top: 5px;
 }
 ul.sidemenu > li {
 	list-style: none;
@@ -94,9 +123,13 @@ ul.sidemenu > li {
 ul.sidemenu > li > a {
 	font-size: 15px;
 	border-left: 1px solid $divider-color;
-	padding: 6px;
+	padding: 6px 0;
 	padding-left: 25px;
 	color: $primary-text-color!important;
+}
+ul.sidemenu > li {
+	list-style: none;
+	padding-bottom: 8px;
 }
 ul.sidemenu > li > a:hover {
 	border-left: 2px solid $accent-color;
@@ -111,4 +144,14 @@ ul.sidemenu > li > a:hover {
 .page-call h1 {
 	font-size: 26px;
 	color: $primary-text-color;
+}
+
+.footer-container{
+	margin-top: 40px;
+	background-color: $accent-color;
+	padding: 20px 0;
+	color: lighten($accent-color, 25%);
+}
+.footer-container a {
+	color: #FFF!important;
 }

@@ -25,7 +25,7 @@ class MainSideMenuCell extends Cell
     public function display()
     {
         $this->loadModel('Categories');
-        $categories = $this->Categories->find('all');
+        $categories = $this->Categories->find('all', ['order' => ['name']]);
         $this->set(compact('categories'));
     }
 }

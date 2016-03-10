@@ -1,3 +1,4 @@
+<?= $this->assign('title', 'Castle of Plugins') ?>
 <!-- <div class="row">
 	<div class="col-md-12">
 		<div class="page-call">
@@ -20,13 +21,17 @@
 			</h4>
 			<hr>
 		</div>
-		<?php for ($i=0; $i < 15; $i++): ?>
+		<?php for ($i=0; $i < 10; $i++): ?>
 			<?php foreach ($plugins as $plugin): ?>
 				<div class="plugin-card">
 					<div class="row">
 						<div class="col-md-10">
 							<h3>
-								<?= $this->Html->link($plugin->user->username . '/' . $plugin->name, []) ?> <!-- <span class="text-muted">[<?= $plugin->rpgmaker_version->name ?>]</span> -->
+								<?= $this->Html->link($plugin->user->username . '/' . $plugin->name, [
+									'controller' => 'plugins',
+									'action' => 'view',
+									$plugin->namespace
+								]) ?> <!-- <span class="text-muted">[<?= $plugin->rpgmaker_version->name ?>]</span> -->
 							</h3>		
 							<p class="plugin-card-description">
 								<?= $plugin->description ?>
@@ -42,7 +47,7 @@
 							</div>
 							<p class="text-muted">
 								<small>
-									Updated <?= $this->Time->timeAgoInWords($plugin->created) ?>
+									Updated <?= $this->Time->timeAgoInWords($plugin->created, ['accuracy' => 'day']) ?>
 								</small> 
 							</p>
 						</div>

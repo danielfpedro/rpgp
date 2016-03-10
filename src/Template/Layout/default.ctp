@@ -25,14 +25,13 @@
 
     <?= $this->element('navbar') ?>
 
-    <div class="home-hero">
-        <div class="home-hero-container">
+<!--     <div class="home-hero">
+        <div class="container">
             <h1>
-                Go Further
+                Go Further <small>Enchant your RPG Maker game with the hotest plugins that is out there.</small>
             </h1>
-            <p>Enchant your RPG Maker game with the hotest plugins that is out there.</p>
         </div>
-    </div>
+    </div> -->
 
 <!--     <div class="container-search">
         <div class="container">
@@ -47,8 +46,9 @@
         </div>
     </div> -->
 
-    <div class="container">
-        <?= $this->fetch('content') ?>
-    </div>
+    <?= $this->fetch('content') ?>
+
+    <?= $this->element('footer') ?>
+
 </body>
 </html>
