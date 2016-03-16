@@ -16,6 +16,8 @@
     <?= $this->Html->script('../lib/jquery/dist/jquery.min.js') ?>
     <?= $this->Html->script('../lib/bootstrap/dist/js/bootstrap.min.js') ?>
 
+    <?= $this->Html->css('../lib/font-awesome/css/font-awesome.min') ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -46,9 +48,12 @@
         </div>
     </div> -->
 
-    <?= $this->fetch('content') ?>
-
-    <?= $this->element('footer') ?>
+    <div class="body">
+        <?= $this->fetch('content') ?>
+    </div>
+    <div class="fotter">
+        <?= $this->element('footer') ?>
+    </div>
 
 </body>
 </html>

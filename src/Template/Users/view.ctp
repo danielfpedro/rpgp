@@ -1,17 +1,13 @@
-<div class="container">
+<div class="container container-page">
     <div class="row">
         <div class="col-md-8">
-            <h3><?= $user->name ?></h3>
+            <h3>
+                <?= $this->Html->image('avatar.jpg', ['style' => 'width: 35px', 'class' => 'img-circle']) ?>
+                <?= $user->username ?>
+            </h3>
             <hr>
             <?php foreach ($plugins as $plugin): ?>
-                <div>
-                    <h4>
-                        <?= $this->Html->link($plugin->name, ['controller' => 'Plugins', 'action' => 'view', $plugin->namespace]) ?>
-                    </h4>
-                    <?= $this->Html->link($user->name, ['controller' => 'Users', 'action' => 'view', $user->username]) ?>
-                    <p class="muted"><?= $plugin->description ?></p>
-                    <hr>
-                </div>
+                <?= $this->element('box_plugin', ['plugin' => $plugin]) ?>
             <?php endforeach ?>
             
             <?php if ($this->Paginator->hasPage()): ?>

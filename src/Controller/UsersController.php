@@ -37,6 +37,7 @@ class UsersController extends AppController
 
         $this->paginate = [
             'conditions' => ['user_id' => $user->id],
+            'contain' => ['Users'],
             'maxLimit' => 10
         ];
 

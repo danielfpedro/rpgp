@@ -30,8 +30,8 @@ class PluginsPhoto extends Entity
         'id' => false,
     ];
 
-    protected function _getPhotoFullPath()
+    protected function _getFullPath()
     {
-        return '../files/plugins/photos/d/' . $this->_properties['name'];
+        return 'files/plugins/photos/d/' . $this->_properties['name'];
     }
 }

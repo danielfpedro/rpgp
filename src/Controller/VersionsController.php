@@ -23,7 +23,7 @@ class VersionsController extends AppController
      */
     public function index($id = null)
     {
-        $plugin = $this->Versions->Plugins->get($id);
+        $plugin = $this->Versions->Plugins->get($id, ['contain' => ['Users']]);
 
         $this->paginate = [
             'conditions' => [

@@ -13,62 +13,33 @@
 	</div>
 </div>	 -->
 
-<div class="row">
-	<div class="col-md-9">
-		<div class="text-center">
-			<h4>
-				<span class="glyphicon glyphicon-fire"></span> Trend Plugins
-			</h4>
-			<hr>
+    <div class="home-hero">
+        <div class="container">
+            <h1>
+                Go Further <small>Enchant your RPG Maker game with the hotest plugins out there.</small>
+            </h1>
+        </div>
+    </div>
+
+<div class="container container-page">
+
+	<div class="row">
+		<div class="col-md-9">
+			<div class="">
+				<h4>
+					<span class="glyphicon glyphicon-fire"></span> Trend Plugins
+				</h4>
+				<hr>
+			</div>
+			<?php for ($i=0; $i < 10; $i++): ?>
+				<?php foreach ($plugins as $plugin): ?>
+					<?= $this->element('box_plugin', ['plugin' => $plugin]) ?>
+				<?php endforeach ?>
+			<?php endfor ?>
 		</div>
-		<?php for ($i=0; $i < 10; $i++): ?>
-			<?php foreach ($plugins as $plugin): ?>
-				<div class="plugin-card">
-					<div class="row">
-						<div class="col-md-10">
-							<h3>
-								<?= $this->Html->link($plugin->user->username . '/' . $plugin->name, [
-									'controller' => 'plugins',
-									'action' => 'view',
-									$plugin->namespace
-								]) ?> <!-- <span class="text-muted">[<?= $plugin->rpgmaker_version->name ?>]</span> -->
-							</h3>		
-							<p class="plugin-card-description">
-								<?= $plugin->description ?>
-							</p>
-							<div>
-								<small>
-									<span class="glyphicon glyphicon-tags text-muted"></span>
-									&nbsp;
-									<?php foreach ($plugin->tags_array as $tag): ?>
-										<?= $this->Html->link($tag, []) ?>&nbsp;
-									<?php endforeach ?>
-								</small>
-							</div>
-							<p class="text-muted">
-								<small>
-									Updated <?= $this->Time->timeAgoInWords($plugin->created, ['accuracy' => 'day']) ?>
-								</small> 
-							</p>
-						</div>
-						<div class="col-md-2 text-right">
-							<div class="row">
-								<div class="col-md-12">
-									<span class="glyphicon glyphicon-star"></span> 382	
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									RPG Maker <strong><ins>MV</ins></strong>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			<?php endforeach ?>
-		<?php endfor ?>
+		<div class="col-md-3">
+			<?= $this->cell('mainSideMenu') ?>
+		</div>
 	</div>
-	<div class="col-md-3">
-		<?= $this->cell('mainSideMenu') ?>
-	</div>
+
 </div>

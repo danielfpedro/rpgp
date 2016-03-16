@@ -2,10 +2,21 @@
 
 $body-bg-color: #F7FAFA;
 
+html{
+	height: 100%;
+}
+
 body {
 	font-family: 'Lato', sans-serif!important;
 	background-color: $body-bg-color;
 	color: $secondary-text-color!important;
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.body{
+	flex: 1;
 }
 a {
 	color: $accent-color!important;
@@ -154,4 +165,19 @@ ul.sidemenu > li > a:hover {
 }
 .footer-container a {
 	color: #FFF!important;
+}
+.plugin-thumbs-container {
+	white-space:nowrap;
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.plugin-thumb {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin-right: 10px;
+	border-radius: 4px;
 }
