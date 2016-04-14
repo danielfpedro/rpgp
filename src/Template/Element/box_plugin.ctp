@@ -11,7 +11,7 @@
 			<p class="plugin-card-description">
 				<?= $plugin->description ?>
 			</p>
-			<div>
+<!-- 			<div>
 				<small>
 					<span class="glyphicon glyphicon-tags text-muted"></span>
 					&nbsp;
@@ -19,10 +19,10 @@
 						<?= $this->Html->link($tag, []) ?>&nbsp;
 					<?php endforeach ?>
 				</small>
-			</div>
+			</div> -->
 			<p class="text-muted">
 				<small>
-					Updated <?= $this->Time->timeAgoInWords($plugin->created, ['accuracy' => 'day']) ?>
+					Last Release <?= $this->Time->timeAgoInWords($plugin->created, ['accuracy' => 'day']) ?>
 				</small> 
 			</p>
 		</div>

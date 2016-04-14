@@ -21,25 +21,25 @@
         </div>
     </div>
 
-<div class="container container-page">
+<div class="container container-page" style="width: 800px">
 
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-112">
 			<div class="">
-				<h4>
+				<h3>
 					<span class="glyphicon glyphicon-fire"></span> Trend Plugins
-				</h4>
-				<hr>
+				</h3>
 			</div>
+			<hr>
 			<?php for ($i=0; $i < 10; $i++): ?>
 				<?php foreach ($plugins as $plugin): ?>
 					<?= $this->element('box_plugin', ['plugin' => $plugin]) ?>
 				<?php endforeach ?>
 			<?php endfor ?>
 		</div>
-		<div class="col-md-3">
+<!-- 		<div class="col-md-2" style="padding-left: 50px;">
 			<?= $this->cell('mainSideMenu') ?>
-		</div>
+		</div> -->
 	</div>
 
 </div>

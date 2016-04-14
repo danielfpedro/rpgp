@@ -10,6 +10,28 @@
 				]
 			) ?>
 		</div>
+
+<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+        	<div class="input-group">
+        	<span class="input-group-addon">
+        		<?= $this->Html->icon('search') ?>
+        	</span>
+          	<input type="text" class="form-control" placeholder="Search plugin...">
+
+          </div>
+                <select class="form-control">
+                	<option>MV</option>
+                	<option>Ace</option>
+                	<option>2003</option>
+          			<option>XP</option>
+          			<option>Original</option>
+          		</select>
+          	
+          
+        </div>
+      </form>
+
 		<?php if ($authUser): ?>
 <!-- 			<div class="navbar-right">
 				<?= $this->Html->link('Adicionar Plugin', [

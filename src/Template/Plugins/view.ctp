@@ -7,38 +7,59 @@
     <div class="row">
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-12 text-right">
-                    <?= $this->Html->link('Stars 312', ['controller' => 'versions', 'action' => 'index', $plugin->id], ['class' => 'btn btn-default']) ?>
-                    <div class="btn-group">
-                        <?= $this->Html->link('Releases', ['controller' => 'versions', 'action' => 'index', $plugin->id], ['class' => 'btn btn-default']) ?>
-                        <?= $this->Html->link('Download v1.0', [], ['class' => 'btn btn-default']) ?>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h3>
-                        <?= $this->Html->image('avatar.jpg', ['style' => 'width: 35px', 'class' => 'img-circle']) ?>
-                        <?= $this->Html->link($plugin->user->username, [
-                            'controller' => 'Users',
-                            'action' => 'view',
-                            $plugin->user->username
-                        ]) ?> / <?= $plugin->name ?>
-                        &nbsp;
-                        <?= $this->Form->dropdownButton($this->Html->glIcon('pencil') . '&nbsp;Edit', [
-                            $this->Html->link('Plugin', '#'),
-                            'divider',
-                            $this->Html->link('Screenshots', [
-                                'controller' => 'PluginsPhotos',
-                                'action' => 'edit',
-                                $plugin->id
-                                ]),
-                            ]);
-                        ?>
-                    </h3>
-                    <p class="text-muted">
-                        <em><?= $plugin->description ?></em>
-                    </p>                    
+                <div class="col-md-12">
+                    <h4 style="margin-bottom: 0;">Core</h4>        
                 </div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-10">
+                    <!-- avatar picture of the vendor -->
+                    <?= $this->Html->image('avatar.jpg', ['style' => 'width: 35px', 'class' => 'img-circle']) ?>
+                    <!-- vendor name -->
+                    <?= $this->Html->link($plugin->user->username, [
+                        'controller' => 'Users',
+                        'action' => 'view',
+                        $plugin->user->username
+                    ]) ?>
+                    /
+                    <!-- name -->
+                    <?= $plugin->name ?>
+                </div>
+                <div class="col-md-2">
+                    <?= $this->Html->link($this->Html->icon('star') . ' Stars 312', [
+                        'controller' => 'versions',
+                        'action' => 'index',
+                        $plugin->id
+                    ], [
+                        'class' => 'btn btn-default btn-block',
+                        'escape' => false
+                    ]) ?>
+                </div>
+            </div>
+
+<!--             <hr>
+
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <?= $this->Html->faicon('tree') ?> For <strong>RPG Maker MV</strong>
+                </div>
+                <div class="col-md-6 text-center">
+                    <?= $this->Html->faicon('list-ul')?> Category <strong>Core</strong>
+                </div>
+            </div>
+            
+            <hr>
+ -->
+
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-muted">
+                        <em><?= $plugin->description ?></em>
+                    </p>      
+                </div>
+            </div>  
             <hr>
 
             <div class="plugin-thumbs-container">
@@ -57,7 +78,7 @@
 
             <p>Readme</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 text-center">
             <?= $this->element('plugin_menu') ?>
         </div>
     </div>
